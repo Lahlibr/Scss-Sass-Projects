@@ -1,0 +1,178 @@
+$primary-color:#F3F6FA;
+@function rem($pixel){
+    @if type-of($pixel) == "number" and unitless($pixel) {
+        @return ($pixel / 16) * 1rem;
+    } @else {
+        @error "use only numbers";
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;700&display=swap');
+
+*{
+    margin: 0%;
+    
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    flex: 1 1 100%;
+    height: 100vh;
+    align-items: center;
+    .main{
+        position: relative;
+        flex: 0 1 70%;
+        height: 95vh;
+        margin:0 20% 0 1.5%;
+        background-color: $primary-color;
+        .image{
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            top: 0%;
+            margin-left: rem(-20);
+            margin-right: -40%;
+            flex: 1 1 100%;
+            height: 95vh;
+            background:
+            url(./image.png), 
+            url(./cutimage.png);
+            background-position:
+            right 25% center,
+            right center;
+            background-size:
+            30% auto,
+            55% 130vh;
+            background-repeat: no-repeat;
+            h1{
+                position: absolute;
+                padding-left: 2px;
+                color: black;
+                font-size: clamp(2.8rem, 5vw, 4.9rem);
+                top: 15%;
+                font-weight: 700;
+                width: 35%;
+                font-family:'League Spartan', sans-serif;;
+                font-style: Regular;
+                left: 5%;
+            }
+            .line{
+                position: absolute;
+                top: 30%;
+                left: 1%;
+                padding: 20px;
+                width: 100vw;
+                height: 10vh;
+                background-color: aqua;
+                background:
+                url(./Picture3.png);
+                background-position:
+                clamp(2.8rem, 5vw, 4.9rem);
+                background-size:
+                7% auto;
+                background-repeat: no-repeat;
+            }
+            h2{
+                position: absolute;
+                padding-left: 2px;
+                color: black;
+                font-size: clamp(0.5rem, 2vw, 1.5rem);
+                word-spacing: 20px;
+                top: 45%;
+                font-weight: 100;
+                width: 40.79%;
+                text-align: justify;
+                font-family:'Helios Extended', sans-serif;;
+                font-style: Regular;
+                left: 5%;
+            }
+        }
+        .logo{
+            position: absolute;
+            background-color: rgba(0, 255, 255, 0.181);
+            top: 0%;
+            left: -2%;
+            width: 43%;
+            min-height:7vh;
+            max-height: 8vh;
+            background: 
+            url(./upperlogo.png),
+            url(./upperimage.png);
+            background-position:
+            left 20% top 50%,
+            left top -9px;
+            background-size:
+            7% auto,
+            100% calc(8vh + rem(5));
+            background-repeat: no-repeat;
+            h4{
+                position: absolute;
+                font-variant-position: super;
+                color: $primary-color;
+                font-size:clamp(0.9rem, calc(0.5rem + 1vw), 1.2rem);
+                top: 30%;
+                font-weight: bolder;
+                width: 60%;
+                font-family: Helios Extended Bold;
+                font-style: Regular;
+                left: 35%;
+            }
+        }
+        .continue{    
+            position: absolute;
+            bottom: 14%;
+            left: 10%;
+            width: 17%;
+            min-height:5vh;
+            max-height: 6vh;
+            background: url(./continue.png);
+            background-position:
+            center;
+            background-size:
+            100% auto;
+            background-repeat: no-repeat;
+            h3 {
+                position: absolute;
+                color: $primary-color;
+                font-size: clamp(0.6rem, 2vw, 1.5rem);
+                font-weight: bolder;
+                width: 100%; 
+                font-family: 'Helios Extended Bold', sans-serif;
+                font-style: normal; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+        }
+        .www{    
+            position: absolute;
+            bottom: 0%;
+            right:-25%;
+            width: 37%;
+            min-height:6vh;
+            max-height: 7vh;
+            background:url(./Picture6.png) ;
+            background-position:
+            right bottom;
+            background-size:
+            110% 100%;
+            background-repeat: no-repeat;
+            h5 {
+                position: absolute;
+                color: $primary-color;
+                font-size: clamp(0.6rem, 2vw, 1.5rem);
+                font-weight: bolder;
+                width: 100%;
+                font-family: 'Helios Extended Bold', sans-serif;
+                font-style: normal; 
+                word-wrap: normal;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+    }
+}
+}

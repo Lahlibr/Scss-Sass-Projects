@@ -1,0 +1,95 @@
+
+@function rem($pixel){
+    @if type-of($pixel)=="number" and unitless($pixel){
+        @return($pixel/16) + rem;
+    }@else{
+        @error "use only numbers"
+    }
+}
+
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    width: 90%;
+    min-height: min(100vh, rem(1300));
+    .subcon{
+        display:flex;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        width: 90%;
+        background-size: contain;
+        aspect-ratio: 4/4;
+        background-repeat: no-repeat;
+        align-items: flex-start;
+        .imgcont{
+            flex: 1 1 50%;
+            min-height: rem(455);
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: rem(234);
+            .img1{
+                background: url(./Picture1.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                min-width: rem(430);
+                aspect-ratio: 2/3;
+                top: rem(90);
+            }
+            .img2{
+                background: url(./Picture2.png);
+                min-width: rem(325);
+                aspect-ratio: 3/2;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: rem(460);
+                top: rem(90);
+     
+            }
+            .img3{
+                background: url(./Picture3.png);
+                aspect-ratio: 3/4;
+                min-width: rem(325);
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: rem(460);
+                top: rem(300);
+       
+            }
+        }
+        .font{
+            flex: 1 1 50%;
+            min-height: rem(55);
+            max-height: rem(44);
+            position: relative;
+            left: 14%;
+            top: 2%;
+            word-wrap:break-word;
+            overflow-wrap: break-word;
+            white-space: wrap;
+        @mixin font($width,$family,$size,$weight,$word-spacing,$lineheight){
+            width: $width;
+            font-family: $family;
+            font-size: $size;
+            font-weight: $weight;
+            word-spacing: $word-spacing;
+            line-height: $lineheight;
+        }
+        h1{
+            @include font(rem(623),('Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif),
+            rem(55),100,rem(3),rem(80));
+            
+        }
+        h4{
+           @include font(rem(623),Open Sans Bold,rem(18),100,rem(0),rem(9)); 
+        }
+        h6{
+            @include font(rem(633),( 'Lucida Sans Regular'),rem(16),300,rem(0),rem(35)); 
+            font-size: min(rem(16));
+         }
+        
+        }
+}
+}

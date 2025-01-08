@@ -1,0 +1,343 @@
+@use "sass:math";
+@function rem($pixel){
+    @if type-of($pixel) == "number" and unitless($pixel) {
+        @return math.div($pixel,16) * 1rem;
+    } @else {
+        @error "use only numbers";
+    }
+}
+body{
+    margin: 0%;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    .background{
+        display: flex;
+        flex: 1 1 100%;
+        height: 90vh;
+        background-color: rgb(9, 9, 9);
+        justify-content: center;
+        align-items: center;
+        .subcontainer{
+            display: flex;
+            width: 66vw;
+            height: 60vh;
+            background-color: white;
+            position: relative;
+            .topimage {
+                position: absolute;
+                top: -90%;
+                background: 
+                url(./meetingimg.png) calc(60vw) calc(34vh - 10px),
+                url(./bluecircle.png) calc(3vw) calc(35vh),
+                url(./icon.png) calc(22vw ) calc(1vh + 160px),
+                url(./smcircle.png) calc(74vw - 28px) calc(20vh + 35px),
+                url(./yellow.png) calc(63vw - 28px) calc(1vh ) ;
+                background-size:
+                30% auto,
+                38% auto,
+                clamp(0.1rem, calc(0.9rem + 1vw), 1.8rem), 
+                10% auto ,
+                clamp(6rem, calc(5rem + 12vw), 20rem);
+                transform: translate(50%, 50%);
+                background-repeat: no-repeat;
+                width: 86vw;
+                left: -95%;
+                height: 79.5vh;
+                aspect-ratio: 16/9;
+                h4{
+                position: relative;
+                font-size: clamp(0.1rem, calc(0.9rem + 1vw), 1rem); 
+                font-family: 'Lucida Sans', 'Lucida Sans Regular';
+                font-weight: 100;
+                font-style: normal;
+                width: 65%; 
+                transform: translate(-50%, -15%); 
+                word-wrap: break-word;
+                margin-top: calc(1vw + 160px);  
+                padding: 0 1rem; 
+                line-height: 1.1; 
+                left: 62%;  
+                text-align: start;
+                color: rgb(38, 35, 206);
+                }
+                h1{
+                    position: relative;
+                    left: 26%;
+                    top: 6%;
+                    font-size: clamp(1.3rem, 90%, 1.8rem);
+                    width: 42%;
+                    font-weight: 100;
+                    font-style: normal;
+                    color: blue;
+                }
+                h3{
+                    position: relative;
+                    font-size: clamp(1.1rem, 90%, 1.4rem);
+                    left: 26%;
+                    top: 9%;
+                    font-weight: 100;
+                    width: 47%;
+                    margin-bottom:74px;
+                }
+                
+            }
+            .bluebox{
+                position: absolute;
+                top: -90%;
+                background: 
+                url(./bluebox.png) calc(22vw) calc(53vh - 10px);
+                background-size: 42% auto;
+                transform: translate(50%, 50%);
+                background-repeat: no-repeat;
+                width: 86vw;
+                left: -95%;
+                height: 79.5vh;
+                h5{
+                    position: absolute;
+                    left: 29%;
+                    top: 65%;
+                    font-size: clamp(0.1rem, calc(0.9rem + 1vw), 1rem);
+                    width: 36%;
+                    color: white;
+                    line-height: 1.8;
+                    word-break: keep-all;
+                    font-weight: 100;
+                    height: 34px;
+
+                }
+            }
+            
+        }
+    }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .container .background .subcontainer{ 
+    .topimage{
+        position: absolute;
+        top: -90%;
+        background: 
+        url(./meetingimg.png) calc(60vw) calc(38vh - 15px),
+        url(./bluecircle.png) calc(3vw) calc(35vh),
+        url(./icon.png) calc(22vw ) calc(1vh + 160px),
+        url(./smcircle.png) calc(74vw - 28px) calc(20vh + 35px),
+        url(./yellow.png) calc(63vw - 28px) calc(1vh ) ;
+        background-size:
+        30% auto,
+        38% auto,
+        clamp(0.1rem, calc(0.9rem + 1vw), 1.8rem), 
+        10% auto ,
+        clamp(6rem, calc(5rem + 12vw), 20rem);
+        transform: translate(50%, 50%);
+        background-repeat: no-repeat;
+        width: 86vw;
+        left: -95%;
+        height: 79.5vh;
+        aspect-ratio: 16/9;
+    }
+    .bluebox{
+        background-size: 42% 27%;
+    }
+}
+}
+@media only screen and (max-width: 1024px) { 
+    .container .background{
+     
+     height: 70vh;
+    .subcontainer{
+        height: 50vh;
+       
+        .topimage{
+            position: absolute;
+            top: -90%;
+            
+            background: 
+            url(./meetingimg.png) calc(60vw) calc(45vh - 15px),
+            url(./bluecircle.png) calc(3vw) calc(40vh),
+            url(./icon.png) calc(22vw ) calc(7vh + 140px),
+            url(./smcircle.png) calc(63vw - rem(-91)) calc(7vh + rem(131) ),
+            url(./yellow.png) calc(63vw - 28px) calc(5vh ) ;
+            background-size:
+            30% auto,
+            38% auto,
+            clamp(0.1rem, calc(0.9rem + 1vw), 1.8rem), 
+            10% auto ,
+            clamp(6rem, calc(5rem + 12vw), 20rem);
+            transform: translate(50%, 50%);
+            background-repeat: no-repeat;
+            width: 86vw;
+            left: -95%;
+            height: 63.5vh;
+            aspect-ratio: 16/9;
+            h4{
+                top: 8%;
+            }
+            h1{
+                top: 15%;
+                font-size: clamp(1.6rem, 90%, 2.4rem);
+            }
+            h3{
+                top: 20%;
+            }
+        }
+        .bluebox{
+            top: -130%;
+            background: 
+                url(./bluebox.png) calc(22vw) calc(53vh - 10px);
+            background-size: 42% 18%;
+            transform: translate(50%, 50%);
+            background-repeat: no-repeat;
+        }
+ }
+}
+}
+@media only screen and (max-width: 992px) { 
+    .container .background .subcontainer{ 
+        width: 84vw;
+        .topimage{
+            position: absolute;
+            top: -90%;
+            background: 
+            url(./meetingimg.png) calc(62vw) calc(45vh - 1px),
+            url(./bluecircle.png) calc(0vw) calc(42vh),
+            url(./icon.png) calc(10vw ) calc(5vh + 160px),
+            url(./smcircle.png) calc(61vw - rem(-91)) calc(7vh + rem(131) ),
+            url(./yellow.png) calc(60vw - 28px) calc(1vh ) ;
+            background-size:
+            40% auto,
+            38% auto,
+            clamp(0.1rem,50vw, 1.8rem), 
+            13% auto ,
+            30% auto;
+            transform: translate(50%, 50%);
+            background-repeat: no-repeat;
+            width: 89vw;
+            left: -59%;
+            height: 93.5vh;
+            aspect-ratio: 16/9;
+            h4 {
+                left: 50%;
+                top: 6%;
+            }
+            h1{
+                left: 15%;
+                top: 15%;
+                width: 54%;
+            }
+            h3{
+                left: 15%;
+                top: 18%;
+                width: 62%;
+            }
+        }
+        .bluebox{
+            left: -68%;
+            background-size: 52% 20%; 
+            h5{  
+                width: 44%;
+            }
+        }
+ }
+}
+@media only screen and (max-width: 768px) {
+    .container .background .subcontainer{
+        height: 66vh;
+        .topimage{
+            height: 80vh;
+            top: -82%; 
+            background: 
+            url(./meetingimg.png) calc(58vw) calc(53vh - 10px) ,
+            url(./bluecircle.png) calc(0vw) calc(45vh),
+            url(./icon.png) calc(12vw ) calc(5vh + 160px),
+            url(./smcircle.png) calc(76vw - 28px) calc(18vh),
+            url(./yellow.png) calc(53vw - 28px) calc(2vh ) ;
+            background-size:
+                35% 35%,
+                48% auto,
+                5% auto, 
+                10% auto ,
+                35% auto;
+            background-repeat: no-repeat;
+            transform: translate(50%, 50%);
+            h4{
+               left: 53%;
+            }
+            h1{
+                top: 22%;
+                left: 20%;
+            }
+            h3{
+                left: 20%;
+                top: 25%;
+            }
+        }
+        .bluebox{
+            position: absolute;
+            top: -75%;
+            background: 
+                url(./bluebox.png) calc(22vw) calc(53vh - 10px);
+            background-size: 49% 23%;
+            transform: translate(50%, 50%);
+            background-repeat: no-repeat;
+            width: 86vw;
+            left: -68%;
+            height: 79.5vh;
+        }
+    }
+    
+}
+@media only screen and (max-width: 576px) {
+    .container .background .subcontainer{
+        height: 73vh;
+        .topimage{
+            height: 87vh;
+            top: -78%;
+           
+            background: 
+            url(./meetingimg.png) calc(58vw) calc(57vh - 10px),
+            url(./bluecircle.png) calc(0vw) calc(45vh - 30px),
+            url(./icon.png) calc(10vw ) calc(1vh + 160px),
+            url(./smcircle.png) calc(78vw - 28px) calc(17vh),
+            url(./yellow.png) calc(56vw - 28px) calc(5vh ) ;
+            background-size:
+                35% 35%,
+                70% auto,
+                7% auto, 
+                10% auto ,
+                35% auto;
+            background-repeat: no-repeat;
+            transform: translate(50%, 50%);
+            h4{
+                left: 52%;
+                top: 1%;
+            }
+            h1{
+                left: 15%;
+                top: 5%;
+                font-size: clamp(1.5rem, 90%, 2.0rem);
+                width: 75%;
+            }
+            h3{
+                top: calc(13vh - 60px);
+                width: 75%;
+                left: 15%;
+            }
+        }
+        .bluebox{
+            background-size: 50% calc(59vh);
+            height: 110%;
+            top: calc(-65vh + 115px);
+
+            h5{
+                top: 65%;
+                width: 45%;
+                font-size: clamp(0.7rem, 70%, 1rem);
+            }
+        }
+    }
+    
+}
+
+        
